@@ -70,18 +70,18 @@ public class Test {
         Magasin magasin1=new Magasin(1,"carrefour","centre ville ");
         Magasin magasin2=new Magasin(2,"monprix","manzah 6");
 
-        Caisser cassaier1=new Caisser(1, "riri","3abla",24,124);
-        Caisser cassaier2=new Caisser(2, "sousou","laouina",1,125);
+        Caisser cassaier1=new Caisser(1, "riri","mjabla",24,124);
+        Caisser cassaier2=new Caisser(2, "sousou","laouina",200,125);
         Vendeur vendeur1=new Vendeur(2, "mary","marsa",7,12500);
-        Responsable responsable1=new Responsable(1,"jhon","3abdou",12,140);
+        Responsable responsable1=new Responsable(1,"jhon","ambdou",12,140);
         magasin1.AjouterEmploye(cassaier1);
         magasin1.AjouterEmploye(cassaier2);
         magasin1.AjouterEmploye(vendeur1);
         magasin1.AjouterEmploye(responsable1);
-        Caisser cassaier3=new Caisser(3, "chouchou","tborsek",2,126);
-        Vendeur vendeur2=new Vendeur(3, "mahmoud","haytadha",7,12500);
-        Vendeur vendeur3=new Vendeur(4, "chifa","sidibou",7,1285200);
-        Vendeur vendeur4=new Vendeur(5, "ayoub","bendaha",7,125854210);
+        Caisser cassaier3=new Caisser(3, "chouchou","tborisek",2,126);
+        Vendeur vendeur2=new Vendeur(3, "mahmoud","hatadha",7,12500);
+        Vendeur vendeur3=new Vendeur(4, "chifa","sidiboku",7,1285200);
+        Vendeur vendeur4=new Vendeur(5, "ayoub","benja",7,125854210);
         Responsable responsable2=new Responsable(25,"ryhab","lagoulette",10,1500);
         magasin2.AjouterEmploye(cassaier3);
         magasin2.AjouterEmploye(vendeur2);
@@ -99,9 +99,17 @@ public class Test {
         magasin1.AfficherMG();
         magasin2.AfficherMG();
 
+        System.out.println(responsable1.calculerSalaire());
+        System.out.println(cassaier1.calculerSalaire());
+        System.out.println(cassaier2.calculerSalaire());
+        System.out.println(vendeur2.calculerSalaire());
 
-
-
+        magasin1.AfficherSalaire();
+        magasin2.AfficherSalaire();
+        magasin1.AffichePrimeResponsable();
+        magasin2.AffichePrimeResponsable();
+        magasin1.AfficheNombreEmployeParType();
+        magasin2.AfficheNombreEmployeParType();
 
 
 

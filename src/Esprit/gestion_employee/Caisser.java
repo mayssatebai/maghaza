@@ -17,4 +17,14 @@ public class Caisser extends  Employe{
     }
 
 
+    public double calculerSalaire() {
+        double salaire;
+        if(getNbr_heures()<180){
+            salaire=getNbr_heures()*5;
+        }
+        else{
+            salaire=(getNbr_heures()*5)+(getNbr_heures()*0.5*10);
+        }
+return salaire;
+    }
 }

@@ -16,4 +16,15 @@ private float prime;
         return super.toString() + "prime :" +prime;
     }
 
+
+    public double calculerSalaire() {
+        double salaire;
+        if(getNbr_heures()<160){
+            salaire= getNbr_heures()*10+prime;
+        }
+        else{
+            salaire=(getNbr_heures()*10)+(getNbr_heures()*0.2*10)+prime;
+        }
+        return salaire;
+    }
 }

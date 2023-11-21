@@ -1,5 +1,7 @@
 package Esprit.gestion_employee;
 
+import java.util.Objects;
+
 public class Employe {
     private int identifiant;
     private String nom;
@@ -47,4 +49,14 @@ public Employe(int id , String nom , String adresse, int nbr_heures){
 public String toString(){
         return "id : " +identifiant+  "nom : " +nom+ "adresse : " +adresse+ "nbr_heures : " +nbr_heures;
 }
+
+    public double calculerSalaire() {
+        return 0;
+    }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employe employe = (Employe) o;
+        return getIdentifiant() == employe.getIdentifiant() && Objects.equals(getNom(), employe.getNom());
+    }
 }

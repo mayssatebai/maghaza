@@ -1,13 +1,17 @@
 package Esprit.gestion;
 
 import Esprit.entite.Produit;
+import Esprit.gestion_employee.Caisser;
 import Esprit.gestion_employee.Employe;
+import Esprit.gestion_employee.Responsable;
+import Esprit.gestion_employee.Vendeur;
 
 public class Magasin {
     int identifiant;
     String adresse, nom;
     final int CAPACITE = 50;
     int i;
+    int k;
     private static int totalProduit;
     Produit[] tabp = new Produit[50];
     private final int CAPACITE_EMPLOYE=20;
@@ -50,8 +54,8 @@ public class Magasin {
             }
         }
         System.out.println("Employés dans le magasin :");
-        for (int i = 0; i < tabem.length; i++) {
-            Employe employe = tabem[i];
+        for (int j = 0; j < tabem.length; j++) {
+            Employe employe = tabem[j];
             if (employe != null) {
                 System.out.println("  - Nom de l'employé : " + employe.getNom());
                 System.out.println("    Adresse de l'employé : " + employe.getAdresse());
@@ -131,13 +135,52 @@ public class Magasin {
         return null;
     }
 public void AjouterEmploye(Employe employe){
-        for(i=0; i< tabem.length; i++){
-            tabem[i]= employe;
-        }
-    System.out.println("employee ajouter avec sucees " +employe.getNom());
+       if(k< tabem.length){
+           tabem[k]=employe;
+           k++;
+           System.out.println("Ajout l'employe avec succes :"  +employe.getNom());
 
+       }
 }
+public void AfficherSalaire(){
+    System.out.println("salaired es employes dans le magasin");
+    for(int j=0; j< tabem.length; j++){
+        if(tabem[j]!=null){
+            System.out.println("employe :" +tabem[j].getNom());
+            System.out.println("salaire :" +tabem[j].calculerSalaire());
+        }
+    }
+}
+public void AffichePrimeResponsable(){
+    System.out.println("afficher prime de responsable");
+    for(int j=0; j<tabem.length; j++){
+        if(tabem[j] instanceof Responsable){
+            System.out.println("Responhsable :" +tabem[j].getNom());
+            System.out.println("Prime de responsable :" +((Responsable) tabem[j]).getPrime());
+        }
+    }
+}
+public void AfficheNombreEmployeParType(){
+        int nbrResopnsable=0;
+        int nbrCaisser=0;
+        int nbrVendeur=0;
+        for(int j=0; j<tabem.length; j++){
+            if(tabem[j] instanceof Responsable){
+                nbrResopnsable++;
+            }
+            if(tabem[j] instanceof Caisser){
+              nbrCaisser++;
+            }
+            if(tabem[j] instanceof Vendeur){
+                nbrVendeur++;
+            }
+        }
+    System.out.println(" nombre d'employe par type");
+    System.out.println(" Responsbale :" +nbrResopnsable);
+    System.out.println("Caisser  :" +nbrCaisser);
+    System.out.println("Vendeur  :" +nbrVendeur);
 
+    }
 
 
 }

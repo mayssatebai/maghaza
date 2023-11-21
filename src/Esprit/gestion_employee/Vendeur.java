@@ -13,6 +13,11 @@ public class Vendeur extends Employe{
         public float getTauxDeVente(){
             return tauxDeVente;
         }
+        public double calculerSalaire(){
+        double salaire;
+        salaire=450*(getTauxDeVente()/100);
+        return salaire;
+    }
 
     }
 
